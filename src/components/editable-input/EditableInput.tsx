@@ -37,21 +37,21 @@ export function EditableInput({
       {onEdit ? (
         <div style={style}>
           <input
+            data-testid="input-element"
             onChange={handleType}
             value={inputValue}
-            className="editable-input"
           />
           <div style={buttons}>
-            <button onClick={handleApplyEdit}>Apply</button>
-            <button onClick={handleCancelEdit}>Cancel</button>
+            <button data-testid="applyButton" onClick={handleApplyEdit}>Apply</button>
+            <button data-testid="cancelButton" onClick={handleCancelEdit}>Cancel</button>
           </div>
         </div>
       ) : (
         <div style={style}>
-          <p>{inputValue}</p>
+          <p data-testid="text-element">{inputValue}</p>
           <div style={buttons}>
-            <button onClick={handleDelete(item.id)}>Delete</button>
-            <button onClick={handleSetEdit}>Edit</button>
+            <button data-testid="deleteButton" onClick={handleDelete(item.id)}>Delete</button>
+            <button data-testid="editButton" onClick={handleSetEdit}>Edit</button>
           </div>
         </div>
       )}
